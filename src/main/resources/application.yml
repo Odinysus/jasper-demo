@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: jasperDemo
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: #
+    username: #
+    password: #
+server:
+  port: 9090
+
+

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report2" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ed8876e7-7b45-4ad2-9a74-06cf5d16d6b0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select *
+from job_notice]]>
+	</queryString>
+	<field name="id" class="java.lang.String"/>
+	<field name="title" class="java.lang.String"/>
+	<field name="issuecode" class="java.lang.String"/>
+	<field name="issuetime" class="java.sql.Timestamp"/>
+	<field name="urgent" class="java.lang.String"/>
+	<field name="content" class="java.lang.String"/>
+	<field name="attach" class="java.lang.String"/>
+	<field name="readtotal" class="java.math.BigDecimal"/>
+	<field name="state" class="java.lang.String"/>
+	<field name="creator" class="java.lang.String"/>
+	<field name="createtime" class="java.sql.Timestamp"/>
+	<field name="updateby" class="java.lang.String"/>
+	<field name="updatetime" class="java.sql.Timestamp"/>
+	<field name="issuedepartment" class="java.lang.String"/>
+	<field name="todepartmentid" class="java.lang.String"/>
+	<field name="toglobal" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="128" y="23" width="276" height="36" uuid="2eee5d47-be83-4d59-9326-bd7fdedfdf88"/>
+				<textElement textAlignment="Center">
+					<font fontName="宋体" size="24" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[公告列表]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="50" y="6" width="44" height="24" uuid="efac137a-d408-4ebd-9af6-168c74c25d06"/>
+				<textElement textAlignment="Center">
+					<font fontName="宋体" size="14" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[部门：]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="215" y="6" width="44" height="24" uuid="f0f70c61-0871-4161-a18d-73f32b6ff2c5"/>
+				<textElement textAlignment="Center">
+					<font fontName="宋体" size="14" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[时间：]]></text>
+			</staticText>
+			<textField pattern="dd-MMM-yyyy" isBlankWhenNull="true">
+				<reportElement x="475" y="-94" width="80" height="15" uuid="3534e954-b315-49c2-8719-b77b437dadcf"/>
+				<textElement>
+					<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[java.util.Calendar.getInstance().getTime()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="423" y="-94" width="52" height="15" uuid="69759f36-93b6-4004-afa6-23abcff38768"/>
+				<textElement textAlignment="Center">
+					<font fontName="宋体" size="10" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[导出时间：]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="47" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="23" width="44" height="24" uuid="d1f1ca83-3981-4546-a746-1bb43fa268ec"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="宋体" size="14" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[序号]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="44" y="23" width="138" height="24" uuid="3ae38e90-32c5-4bbb-98a8-3784c258ef62"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="宋体" size="14" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[标题]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="182" y="23" width="105" height="24" uuid="9a97ed8d-dd6b-42d0-8c50-ffad9b0d2a48"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="宋体" size="14" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[发文号]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="287" y="23" width="105" height="24" uuid="09386308-6efd-4d38-9125-cd1d5877bf83"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="宋体" size="14" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[发文日期]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="392" y="23" width="66" height="24" uuid="43a18e5a-e5c0-4243-8e94-aef315c1e705"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="宋体" size="14" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[发送部门]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="458" y="23" width="97" height="24" uuid="23b1f4a2-7c2a-4122-bccd-334539a7ca23"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="宋体" size="14" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[状态]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="2" width="100" height="20" uuid="d61b8488-eea6-43b4-820f-5090f333db2f"/>
+				<text><![CDATA[content]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="14" splitType="Stretch">
+			<textField>
+				<reportElement x="44" y="0" width="138" height="14" uuid="1652e725-11c4-4e7f-b022-bad86a2fd8da"/>
+				<textElement textAlignment="Center">
+					<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{title}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="392" y="0" width="66" height="14" uuid="166086a4-ad17-43da-95da-ae2faf494bf5"/>
+				<textElement textAlignment="Center">
+					<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{issuedepartment}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="287" y="0" width="105" height="14" uuid="131bd43c-e132-431e-bde6-08d89306c2d7"/>
+				<textElement textAlignment="Center">
+					<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{issuetime}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="182" y="0" width="105" height="14" uuid="227c9ea9-c755-4f29-9efc-dac5a630f70b"/>
+				<textElement textAlignment="Center">
+					<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{issuecode}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="458" y="0" width="97" height="14" uuid="e26c41af-645b-49c3-9c9f-1ad5bc0fcc4b"/>
+				<textElement textAlignment="Center">
+					<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{state}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="44" height="14" uuid="6939fbcd-ac5c-4cb0-8689-929c651a160c"/>
+				<textElement>
+					<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{COLUMN_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
